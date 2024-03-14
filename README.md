@@ -44,7 +44,7 @@ The Next Things are done in Order when Clicked on `Add Books`
 ![](/assets/bco.png)
 ![](/assets/authoradd.png)
 ![](/assets/bookadd.png)
-__PRs Welcome__
+
 
 ----
 
