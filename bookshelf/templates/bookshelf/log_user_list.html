@@ -1,0 +1,26 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+  <h3 class="display-4">User List</h3>
+  Search Users: <form action="{% url 'usearch' %}" method="get">
+  <input class="form-control" name="q" type="text" placeholder="Type User Name...">
+</form>
+  <hr>
+  <table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User's Name</th>
+      <th scope="col">User Address</th>
+    </tr>
+  </thead>
+    {% for nm in object_list %}
+      <tr>
+        <td class="text-danger">{{ nm.Name }}</td>
+        <td> <strong class="text-success">{{ nm.Address }}</strong> </td>
+      </tr>
+    {% empty %}
+     <h3>User of the provided name not Added yet</h3>   <br/>
+    {% endfor %}
+  </table>
+     
+{% endblock %}

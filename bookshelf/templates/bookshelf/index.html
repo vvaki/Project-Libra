@@ -1,0 +1,30 @@
+{% extends "bookshelf/base.html" %}
+  {% block content %}
+    <head>
+       
+        <title>Library Admin</title>
+    </head> 
+   <body>
+     <h1 class="display-4" align="center" >Welcome to the Library Administration Portal</h1>
+      <p align="center" class="text-primary">This is The Library Management System made by CEK Open Source Community</p>
+        <h3 align="center" >Admin</h3>
+        <table align="center" class="table table-hover">
+        <tr>
+            <td> <strong>Books &nbsp;&nbsp;</strong> </td>
+            <td><b> {{ book }}</b></td>
+        </tr>
+        <tr>
+            <td><strong>Books on Loan &nbsp;&nbsp;</strong></td>
+            <td><b>{{ book_onloan }}</b></td>
+        </tr>
+        <tr>
+            <td><strong>Users</strong></td>
+            <td><b>{{ num_users }}</b></td>
+        </tr>
+        <tr>
+            <td><strong>Books Available</strong></td>
+            <td><b>{{ book_av }}</b></td>
+        </tr>
+    </table>
+    </body>
+{% endblock %}

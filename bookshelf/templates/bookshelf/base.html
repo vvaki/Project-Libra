@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- {% block title %}<title>Local Library</title>{% endblock %} -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+  <nav class="navbar navbar-inverse">  
+      <div class="container-fluid">
+      {% block sidebar %}
+        <ul class="nav navbar-nav">
+          <li><a href="{% url 'index' %}" class="badge badge-primary">Home</a></li>
+          <li><a href="{% url 'logs' %}" class="badge badge-primary">All Logs</a></li>
+          <li><a href="{% url 'books' %}" class="badge badge-primary">All Books</a></li>
+          <li><a href="{% url 'users' %}" class="badge badge-primary">All Users</a></li>
+          <li><a href="{% url 'authors' %}" class="badge badge-primary">All Authors</a></li>
+          <li><a href="{% url 'useradd' %}" class="badge badge-primary">Add Users</a></li>
+          <li><a href="{% url 'logger' %}" class="badge badge-primary">Log Book Exchanges</a></li>
+          <li><a href="{% url 'barcodeadd' %}" class="badge badge-primary">Add Books</a></li>
+          <li><a href="{% url 'logout' %}" class="badge badge-danger">Logout</a></li>
+          <li><a href="{% url 'delog' %}" class="badge badge-danger">Delete Logs</a></li>     
+        </ul>
+     {% endblock %}
+      </div>
+      </nav>
+      <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
+    </div>
+  </div>
+</body>
+</html>

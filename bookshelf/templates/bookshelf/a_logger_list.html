@@ -1,0 +1,25 @@
+{% extends "bookshelf/base.html" %}
+
+{% block content %}
+  <h3 class="display-4">Logger List</h3>
+  <hr>
+  <table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Borrower's Name</th>
+      <th scope="col">Book Title</th>
+      <th scope="col">Book Code</th>
+    </tr>
+  </thead>
+    {% for lg in object_list %}
+      <tr>
+        <td class="text-danger">{{ lg.borrower }}</td>
+        <td> <i class="text-success">{{ lg.book }}</i> </td>
+        <td><small class="text-primary">{{ lg.bar_code_no }}</small></td>
+      </tr>
+    {% empty %}
+     <p>Not Rendered yet</p>   
+    {% endfor %}
+  </table>
+     
+{% endblock %}
